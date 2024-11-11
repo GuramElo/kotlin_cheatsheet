@@ -33,6 +33,13 @@ findViewById<Button>(R.id.resetButton).setOnClickListener {
 //        editText1.backgroundTintList = ColorStateList.valueOf(Color.RED);
         //=======================
     }
+//    val editText = findViewById<EditText>(R.id.myEditText)
+//
+//// Reset the EditText using setText("")
+//editText.setText("")
+//
+//// Reset the EditText using getText().clear()
+//editText.getText().clear()
     fun validateEditText(editText: EditText, validationType: Int): Boolean {
         val input = editText.text.toString()
 
