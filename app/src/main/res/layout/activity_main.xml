@@ -27,13 +27,14 @@
         app:layout_constraintTop_toTopOf="parent" android:paddingLeft="30dp" android:paddingRight="30dp">
 
         <EditText
+            android:id="@+id/editText1"
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white"
             android:backgroundTint="@color/white"
             android:textColorHint="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Phone" android:layout_marginBottom="100dp"></EditText>
+            android:hint="Phone11111" android:layout_marginBottom="100dp"></EditText>
         <EditText
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white"

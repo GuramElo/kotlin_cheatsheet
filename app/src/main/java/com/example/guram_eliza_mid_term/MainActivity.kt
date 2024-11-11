@@ -1,6 +1,9 @@
 package com.example.guram_eliza_mid_term
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
+import android.text.InputFilter
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
@@ -14,15 +17,37 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main);
                 val editText = findViewById<EditText>(R.id.editText)
-        val textInputLayout = findViewById<TextInputLayout>(R.id.testTextInputLayout)
-
-        if (editText.text.toString().isEmpty()) {
-            textInputLayout.error = "This field is required"
-        } else {
-            textInputLayout.error = null  // Clear the error if input is valid
-        }
 findViewById<Button>(R.id.resetButton).setOnClickListener {
-    textInputLayout.error = null
+    val editText1 = findViewById<EditText>(R.id.editText1);
+    if(!validateEditText(editText1, 3)) {
+        editText1.error = "ntuu, "
+    }
 }
+        //=================
+//        editText1.backgroundTintList = ColorStateList.valueOf(Color.RED);
+        //=======================
+    }
+    fun validateEditText(editText: EditText, validationType: Int): Boolean {
+        val input = editText.text.toString()
+
+        when (validationType) {
+            1 -> { // At least 8 characters with at least one digit
+                val pattern = "^(?=.*[0-9])(?=\\S+$).{8,}$"
+                return input.matches(Regex(pattern))
+            }
+            2 -> { // Valid phone number (replace with your specific format)
+                val pattern = "^\\+?[0-9]{9,12}$" // Example: 10-15 digits with optional "+"
+                return input.matches(Regex(pattern))
+            }
+            3 -> { // 4 digits only
+                editText.filters = arrayOf(InputFilter.LengthFilter(4))
+                return input.matches(Regex("^[0-9]{4}$"))
+            }
+            4 -> { // At least 10 characters with at least 3 digits
+                val pattern = "(?=.*\\d.*\\d.*\\d)^\\w{10,}\$"
+                return input.matches(Regex(pattern))
+            }
+            else -> return false
+        }
     }
 }
