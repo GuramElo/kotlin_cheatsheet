@@ -88,13 +88,19 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff0000"><Button
+            android:textAlignment="center"
+            android:gravity="center"
             android:id="@+id/resetButton"
             android:background="#00ff00"
             android:text="Reset"
             android:textSize="20dp"
             android:layout_width="150dp"
-            android:layout_height="50dp"></Button>
+            android:layout_height="50dp"></Button></LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

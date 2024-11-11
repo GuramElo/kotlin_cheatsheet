@@ -29,6 +29,8 @@ findViewById<Button>(R.id.resetButton).setOnClickListener {
 
     toast.show()
 }
+        findViewById<Button>(R.id.resetButton).background = null;
+//        findViewById<Button>(R.id.resetButton).setBackgroundColor(Color.rgb(173, 78, 14));
         //=================
 //        editText1.backgroundTintList = ColorStateList.valueOf(Color.RED);
         //=======================
