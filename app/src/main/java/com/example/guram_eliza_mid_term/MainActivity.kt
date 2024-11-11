@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,6 +23,11 @@ findViewById<Button>(R.id.resetButton).setOnClickListener {
     if(!validateEditText(editText1, 3)) {
         editText1.error = "ntuu, "
     }
+    //++++++++++++++++++
+    val toast = Toast.makeText(this, "Custom Toast", Toast.LENGTH_LONG)
+//    toast.setGravity(Gravity.CENTER, 0, 0)
+
+    toast.show()
 }
         //=================
 //        editText1.backgroundTintList = ColorStateList.valueOf(Color.RED);
